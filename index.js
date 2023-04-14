@@ -23,4 +23,18 @@ document.querySelector("#mudarCor").addEventListener("click", function() {
 if(document.querySelector("#flipper").addEventListener){
     ("click", function() {
     document.querySelector("#mudarCor").click();
-  })};
+    })}
+
+  else if(document.querySelector("#simplehex").addEventListener){
+("click", function(){
+    if (item.classList.contains("azul")) {
+        item.classList.remove("azul");
+        item.classList.add("coral");
+      } else if (item.classList.contains("coral")) {
+        item.classList.remove("coral");
+        item.classList.add("rosa");
+      }else if (item.classList.contains("rosa")) {
+        item.classList.remove("rosa");
+        item.classList.add("azul");
+}})
+  }
