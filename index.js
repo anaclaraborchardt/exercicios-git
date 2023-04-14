@@ -1,5 +1,5 @@
-document.querySelector("button").addEventListener("click", function() {
-    
+document.querySelector("#mudarCor").addEventListener("click", function() {
+
     const itens = document.querySelectorAll("div");
     
     itens.forEach(function(item) {
@@ -19,3 +19,8 @@ document.querySelector("button").addEventListener("click", function() {
       }
     });
   });
+
+if(document.querySelector("#flipper").addEventListener){
+    ("click", function() {
+    document.querySelector("#mudarCor").click();
+  })};
