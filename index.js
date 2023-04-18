@@ -1,40 +1,31 @@
-document.querySelector("#mudarCor").addEventListener("click", function() {
+var primeiroMetodo = "flipper";
+var corSelecionada = " ";
 
-    const itens = document.querySelectorAll("div");
-    
-    itens.forEach(function(item) {
-      
-        if (item.classList.contains("azul")) {
-        item.classList.remove("azul");
-        item.classList.add("vermelho");
-      } else if (item.classList.contains("vermelho")) {
-        item.classList.remove("vermelho");
-        item.classList.add("verde");
-      }else if (item.classList.contains("verde")) {
-        item.classList.remove("verde");
-        item.classList.add("roxo");
-      }else if (item.classList.contains("roxo")) {
-        item.classList.remove("roxo");
-        item.classList.add("azul");
-      }
-    });
-  });
+function trocarMetodo() {
+  primeiroMetodo = document.getElementById("metodo").value;
+}
 
-if(document.querySelector("#flipper").addEventListener){
-    ("click", function() {
-    document.querySelector("#mudarCor").click();
-    })}
-
-  else if(document.querySelector("#simplehex").addEventListener){
-("click", function(){
-    if (item.classList.contains("azul")) {
-        item.classList.remove("azul");
-        item.classList.add("coral");
-      } else if (item.classList.contains("coral")) {
-        item.classList.remove("coral");
-        item.classList.add("rosa");
-      }else if (item.classList.contains("rosa")) {
-        item.classList.remove("rosa");
-        item.classList.add("azul");
-}})
+function mudarCor() {
+  var cor;
+  if (primeiroMetodo === "flipper") {
+    cor = corFlipper();
+  } else {
+    cor = corSimpleHex();
   }
+  corSelecionada = cor;
+  document.body.style.backgroundColor = cor;
+  document.getElementById("corSelecionada").textContent = corSelecionada;
+}
+
+function corFlipper() {
+  var red = Math.floor(Math.random() * 256);
+  var green = Math.floor(Math.random() * 256);
+  var blue = Math.floor(Math.random() * 256);
+  var cor = "rgb(" + red + "," + green + "," + blue + ")";
+  return cor;
+}
+
+function corSimpleHex() {
+  var hex = Math.floor(Math.random() * 16777216).toString(16);
+  return "#" + ("000000" + hex).slice(-6);
+}
