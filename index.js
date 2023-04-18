@@ -1,8 +1,8 @@
 var primeiroMetodo = "flipper";
 var corSelecionada = " ";
 
-function trocarMetodo() {
-  primeiroMetodo = document.getElementById("metodo").value;
+function trocarMetodo(metodo) {
+  primeiroMetodo = metodo
 }
 
 function mudarCor() {
